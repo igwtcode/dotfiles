@@ -20,8 +20,8 @@ return {
         },
         formatters = {
           prettier = {
-            command = "prettier",
-            stdin = false,
+            -- command = "prettier",
+            stdin = true,
             args = {
               "--stdin-filepath",
               "$FILENAME",
