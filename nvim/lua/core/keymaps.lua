@@ -10,9 +10,9 @@ local M = {}
 
 h.nnoremap("<leader>e", "<cmd>Oil<CR>", { desc = "Explorer" })
 h.nnoremap("<leader>w", "<cmd>w<cr>", { silent = false, desc = "Save/Write" })
-h.nnoremap("<leader>wa", "<cmd>wa<cr>", { silent = false, desc = "Save/Write All" })
+-- h.nnoremap("<leader>wa", "<cmd>wa<cr>", { silent = false, desc = "Save/Write All" })
 h.nnoremap("<leader>q", "<cmd>q<cr>", { silent = false, desc = "Quit" })
-h.nnoremap("<leader>qa", "<cmd>qa<cr>", { silent = false, desc = "Quit All" })
+-- h.nnoremap("<leader>qa", "<cmd>qa<cr>", { silent = false, desc = "Quit All" })
 h.nnoremap("<leader>r", "<cmd>RotateWindows<cr>", { desc = "Rotate Windows" })
 h.nnoremap("<leader>m", "<cmd>MaximizerToggle<CR>", { desc = "Maximize/minimize a split" })
 h.nnoremap("<leader>lg", "<cmd>LazyGit<CR>", { desc = "Lazygit" })
