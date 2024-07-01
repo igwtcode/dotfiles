@@ -4,9 +4,6 @@
 ```bash
 # to setup all symlinks at once
 stow .
-
-# ex: to setup a single symlink
-stow lazygit
 ```
 
 ### Tmux
