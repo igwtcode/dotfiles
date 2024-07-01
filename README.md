@@ -2,8 +2,21 @@
 
 ### Setup Symlinks:
 ```bash
-./setup.sh
+# to setup all symlinks at once
+stow .
+
+# ex: to setup a single symlink
+stow lazygit
 ```
+
+### Tmux
+once everything has been installed, it's time to run TPM, install first:
+
+```bash
+git clone https://github.com/tmux-plugins/tpm ~/.config/tmux/plugins/tpm
+```
+
+then run `Ctrl+I` to install all plugins
 
 ### Homebrew:
 ```bash
