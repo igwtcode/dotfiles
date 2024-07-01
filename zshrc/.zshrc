@@ -32,7 +32,8 @@ export GOPATH=$HOME/go/bin
 export PATH=$GOPATH:$nvim_mason:$PATH
 unset nvim_mason
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$($(brew --prefix)/bin/brew shellenv)"
 eval "$(starship init zsh)"
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
@@ -44,7 +45,7 @@ zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 autoload bashcompinit && bashcompinit
 autoload -Uz compinit
 compinit
-complete -C '/opt/homebrew/bin/aws_completer' aws
+complete -C "$(brew --prefix)/bin/aws_completer" aws
 
 # pull all git branches
 git_pull_all_branches() {
