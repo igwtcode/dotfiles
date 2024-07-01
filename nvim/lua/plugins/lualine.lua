@@ -28,7 +28,7 @@ return {
         theme = "catppuccin",
         globalstatus = true,
         component_separators = { left = "", right = "" },
-        section_separators = { left = "█", right = "█" },
+        section_separators = { left = "", right = "" },
       },
       sections = {
         lualine_a = { "mode" },
@@ -39,7 +39,7 @@ return {
           "diff",
           {
             "diagnostics",
-            sources = { "nvim_lsp" },
+            sources = { "nvim_diagnostic" },
             sections = { "error", "warn", "info", "hint" },
 
             symbols = {
