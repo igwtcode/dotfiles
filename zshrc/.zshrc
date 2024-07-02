@@ -46,8 +46,11 @@ export GOPATH=$HOME/go/bin
 export PATH=$GOPATH:$nvim_mason:$PATH
 unset nvim_mason
 
-# eval "$(/opt/homebrew/bin/brew shellenv)"
-eval "$($(brew --prefix)/bin/brew shellenv)"
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  eval "$(/opt/homebrew/bin/brew shellenv)"
+elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
+  eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+fi
 eval "$(starship init zsh)"
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
