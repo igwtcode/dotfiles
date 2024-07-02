@@ -8,6 +8,7 @@ coreutils
 eza
 fd
 fzf
+font-caskaydia-cove-nerd-font
 gh
 git
 git-delta
@@ -27,6 +28,7 @@ tmux
 tokei
 tree
 watch
+wezterm
 wget
 yq
 zsh-autosuggestions
