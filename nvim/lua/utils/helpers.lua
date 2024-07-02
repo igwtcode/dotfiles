@@ -154,6 +154,9 @@ function M.set_aws_cloudformation_schemas(event)
       "!Join scalar",
       "!Join mapping",
       "!Join sequence",
+      "!Condition scalar",
+      "!Condition mapping",
+      "!Condition sequence",
     }
     client.notify("workspace/didChangeConfiguration", { settings = yamlls_config })
   end
