@@ -5,25 +5,39 @@ setopt HIST_IGNORE_SPACE
 setopt HIST_FIND_NO_DUPS
 setopt HIST_SAVE_NO_DUPS
 
+export HISTORY_TIME_FORMAT="%Y-%m-%d %T "
 HISTFILE=~/.zsh_history
 HISTSIZE=6000
 SAVEHIST=9000
 
+alias rm='rm -i'
+alias cp='cp -i'
+alias mv='mv -i'
+alias exit=' exit'
+alias pwd=' pwd'
+alias bg=' bg'
+alias fg=' fg'
+alias lazygit=' lazygit'
+alias clear=' clear'
+alias nvim=' nvim'
+alias bat=' bat'
+alias hist=' history -E'
+alias lg=lazygit
+alias c=clear
+alias v=nvim
+alias b=bat
 alias src='source $HOME/.zshrc'
 alias tr='eza --group-directories-first --ignore-glob ".git|.DS_Store" -laTL'
 alias ll='eza --group-directories-first --ignore-glob ".DS_Store" -l'
 alias lla='ll -A'
-alias lg='lazygit'
-alias v=nvim
-alias c=clear
-alias b=bat
 alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
 
-export HOMEBREW_NO_ANALYTICS=1
 export EDITOR=nvim
+export HOMEBREW_NO_ANALYTICS=1
+export HOMEBREW_NO_AUTO_UPDATE=1
 export LG_CONFIG_FILE=$HOME/.config/lazygit/config.yaml
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
@@ -35,6 +49,7 @@ unset nvim_mason
 # eval "$(/opt/homebrew/bin/brew shellenv)"
 eval "$($(brew --prefix)/bin/brew shellenv)"
 eval "$(starship init zsh)"
+
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
@@ -64,40 +79,7 @@ git_pull_all_branches() {
   git switch $current_branch
 }
 
-# list all chrome profiles on macOS
-list_chrome_profiles() {
-  cd ~/Library/Application\ Support/Google/Chrome
-  for d in *Profile*; do
-      echo -n "$d: "
-      jq -r .profile.name "$d/Preferences"
-  done
-  cd -
-}
-
-# create AppleScript shortcuts for each chrome profile on macOS
-setup_chrome_profiles_shortcut() {
-  # Directory to store the AppleScript files
-  local applescript_dir="$HOME/Documents/chrome-profiles"
-  # Clean up old profiles
-  if [ -d "$applescript_dir" ]; then
-    rm -r "$applescript_dir"
-  fi
-  # Create the directory
-  mkdir -p "$applescript_dir"
-  # Loop over each profile directory
-  cd ~/Library/Application\ Support/Google/Chrome
-  for d in *Profile*; do
-    profile_name=$(jq -r .profile.name "$d/Preferences" | tr -d ' ')
-    if [ "$profile_name" != "null" ] && [ "$profile_name" != "Guest" ] && [ "$profile_name" != "SystemProfile" ] && [ "$profile_name" != "Person1" ]; then
-      echo "Creating AppleScript for profile: $profile_name"
-      # Create the AppleScript file
-      applescript_path="$applescript_dir/$profile_name.applescript"
-      echo "do shell script \"open -na 'Google Chrome' --args --profile-directory='$d'\"" > "$applescript_path"
-      # Convert the AppleScript file to an app
-      osacompile -o "$applescript_dir/$profile_name.app" "$applescript_path"
-      # Remove the AppleScript file
-      rm "$applescript_path"
-    fi
-  done
-  cd -
+# pull all repos with a name filter in directory
+pull_tracking() {
+  for x in $(ls -1 |grep -i '.modul.tracking'); do echo -e "\n---------\n==> $x\n" && cd $x && git_pull_all_branches && cd .. ; done
 }
