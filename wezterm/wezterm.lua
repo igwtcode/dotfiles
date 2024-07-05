@@ -40,7 +40,7 @@ conf.force_reverse_video_cursor = true
 
 conf.font = wezterm.font_with_fallback({
 	font_name,
-	{ family = font_name, italic = true, bold = true },
+	{ family = font_name, italic = true },
 })
 conf.font_size = 16
 conf.line_height = 1.1
