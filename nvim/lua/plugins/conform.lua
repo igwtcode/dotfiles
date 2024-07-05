@@ -4,6 +4,9 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     cmd = { "ConformInfo" },
     config = function()
+      local home = os.getenv("HOME")
+      local prettier_config_path = home .. "/.config/prettier/.prettierrc"
+
       require("conform").setup({
         notify_on_error = true,
         format = {
@@ -20,21 +23,12 @@ return {
         },
         formatters = {
           prettier = {
-            -- command = "prettier",
             stdin = true,
             args = {
               "--stdin-filepath",
               "$FILENAME",
-              "--semi",
-              "false",
-              "--single-quote",
-              "false",
-              "--tab-width",
-              "2",
-              "--trailing-comma",
-              "es5",
-              "--print-width",
-              "180",
+              "--config",
+              prettier_config_path,
               "--write",
             },
           },
