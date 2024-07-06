@@ -38,7 +38,17 @@ return {
           -- miscs = {}, -- Uncomment to turn off hard-coded styles
         },
         color_overrides = {},
-        custom_highlights = {},
+        custom_highlights = function(colors)
+          local highlights = {}
+
+          local spell_options = { style = { "undercurl" }, fg = colors.red }
+          local spell_groups = { "SpellBad", "SpellCap", "SpellLocal", "SpellRare" }
+          for _, v in ipairs(spell_groups) do
+            highlights[v] = spell_options
+          end
+
+          return highlights
+        end,
         integrations = {
           aerial = true,
           alpha = true,
@@ -61,6 +71,16 @@ return {
           mason = true,
           native_lsp = {
             enabled = true,
+            inlay_hints = {
+              background = true,
+            },
+            virtual_text = {
+              errors = { "italic" },
+              hints = { "italic" },
+              warnings = { "italic" },
+              information = { "italic" },
+              ok = { "italic" },
+            },
             underlines = {
               errors = { "undercurl" },
               hints = { "undercurl" },
@@ -78,6 +98,7 @@ return {
           symbols_outline = true,
           telescope = {
             enabled = true,
+            style = "nvchad",
           },
           treesitter = true,
           treesitter_context = true,
