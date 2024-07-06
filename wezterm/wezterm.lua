@@ -19,16 +19,16 @@ conf.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 -- conf.color_scheme = "Tokyo Night"
 
 conf.macos_window_background_blur = 30
-conf.native_macos_fullscreen_mode = true
+conf.native_macos_fullscreen_mode = false
 conf.window_background_opacity = 0.85
 conf.window_decorations = "RESIZE"
 conf.window_close_confirmation = "AlwaysPrompt"
 conf.window_frame = { font_size = 16 }
 conf.window_padding = {
-	left = 21,
-	bottom = 12,
-	top = 18,
-	right = 21,
+	left = 15,
+	bottom = 9,
+	top = 15,
+	right = 15,
 }
 
 conf.use_fancy_tab_bar = false
