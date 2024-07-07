@@ -162,4 +162,17 @@ function M.set_aws_cloudformation_schemas(event)
   end
 end
 
+function M.toLowerKebabCase(str)
+  local result = str:gsub("%s+", "-"):gsub("%u", function(c)
+    return "-" .. c:lower()
+  end)
+  return result:gsub("^-+", ""):gsub("%-+", "-"):lower()
+end
+
+function M.toTitleCase(str)
+  return str:gsub("(%a)([%w_']*)", function(first, rest)
+    return first:upper() .. rest:lower()
+  end)
+end
+
 return M
