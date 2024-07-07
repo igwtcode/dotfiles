@@ -28,7 +28,7 @@ return {
         new_notes_location = "notes_subdir",
 
         daily_notes = {
-          folder = "daily",
+          folder = "1-daily",
           date_format = "%Y-%m-%d-%a",
           template = "daily.md",
         },
@@ -37,10 +37,6 @@ return {
           folder = "templates",
           date_format = "%Y-%m-%d-%a",
           time_format = "%H:%M",
-        },
-
-        attachments = {
-          img_folder = "assets/imgs", -- This is the default
         },
 
         note_id_func = function(title)
