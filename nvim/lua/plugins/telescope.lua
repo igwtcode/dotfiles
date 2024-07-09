@@ -136,7 +136,6 @@ return {
       })
 
       telescope.load_extension("fzf")
-      telescope.load_extension("noice")
       telescope.load_extension("conventional_commits")
     end,
   },

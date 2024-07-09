@@ -54,7 +54,6 @@ h.nnoremap("<leader>fo", "<cmd>Telescope oldfiles<cr>", { desc = "Find recent fi
 h.nnoremap("<leader>fb", "<cmd>Telescope buffers<cr>", { desc = "Find buffers" })
 h.nnoremap("<leader>fg", "<cmd>Telescope live_grep<cr>", { desc = "Find grep" })
 h.nnoremap("<leader>fw", "<cmd>Telescope grep_string<cr>", { desc = "Find string under cursor in cwd" })
-h.nnoremap("<leader>fm", "<cmd>Telescope noice<CR>", { desc = "Find Messages" })
 h.nnoremap("<leader>fD", "<cmd>Telescope diagnostics<CR>", { desc = "Find Diagnostics" })
 h.nnoremap("<leader>fh", "<cmd>Telescope help_tags<cr>", { desc = "Find grep" })
 h.nnoremap("<leader>fk", "<cmd>Telescope keymaps<cr>", { desc = "Find keymaps" })
@@ -74,9 +73,9 @@ h.nnoremap("<leader>ow", "<cmd>ObsidianTomorrow<CR>", { desc = "Obsidian Tomorro
 h.nnoremap("<leader>ob", "<cmd>ObsidianBacklinks<CR>", { desc = "Obsidian Backlinks" })
 -- h.nnoremap("<leader>ot", "<cmd>ObsidianToday<CR>", { desc = "Obsidian Today" })
 
--- h.nnoremap("<leader>fm", function()
---   View_messages()
--- end, { desc = "Find Messages" })
+h.nnoremap("<leader>fm", function()
+  View_messages()
+end, { desc = "Find Messages" })
 
 h.nnoremap("<leader>xx", "<cmd>TroubleToggle<CR>", { desc = "Open/close trouble list" })
 h.nnoremap(
