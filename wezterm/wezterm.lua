@@ -1,10 +1,10 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
-local conf = {}
+local config = {}
 local font_name = "CaskaydiaCove Nerd Font"
 
 if wezterm.config_builder then
-	conf = wezterm.config_builder()
+	config = wezterm.config_builder()
 end
 
 local function scheme_for_appearance(appearance)
@@ -15,42 +15,41 @@ local function scheme_for_appearance(appearance)
 	end
 end
 
-conf.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
--- conf.color_scheme = "Tokyo Night"
+config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
-conf.macos_window_background_blur = 30
-conf.native_macos_fullscreen_mode = true
-conf.window_background_opacity = 0.85
-conf.window_decorations = "RESIZE"
-conf.window_close_confirmation = "AlwaysPrompt"
-conf.window_frame = { font_size = 16 }
-conf.window_padding = {
+config.macos_window_background_blur = 30
+config.native_macos_fullscreen_mode = true
+config.window_background_opacity = 0.85
+config.window_decorations = "RESIZE"
+config.window_close_confirmation = "AlwaysPrompt"
+config.window_frame = { font_size = 16 }
+config.window_padding = {
 	left = 0,
 	bottom = 0,
 	top = 6,
 	right = 0,
 }
 
-conf.adjust_window_size_when_changing_font_size = false
-conf.use_fancy_tab_bar = false
-conf.tab_bar_at_bottom = true
-conf.hide_tab_bar_if_only_one_tab = true
+config.adjust_window_size_when_changing_font_size = false
+config.use_fancy_tab_bar = false
+config.tab_bar_at_bottom = true
+config.hide_tab_bar_if_only_one_tab = true
 
-conf.default_cursor_style = "SteadyBlock"
-conf.force_reverse_video_cursor = true
+config.default_cursor_style = "SteadyBlock"
+config.force_reverse_video_cursor = true
 
-conf.font = wezterm.font_with_fallback({
+config.font = wezterm.font_with_fallback({
 	font_name,
 	{ family = font_name, italic = true },
 })
-conf.font_size = 18
-conf.line_height = 1.1
-conf.dpi = 144
-conf.initial_cols = 90
-conf.initial_rows = 30
-conf.scrollback_lines = 6000
+config.font_size = 18
+config.line_height = 1.1
+config.dpi = 144
+config.initial_cols = 90
+config.initial_rows = 30
+config.scrollback_lines = 6000
 
-conf.keys = {
+config.keys = {
 	{
 		key = "f",
 		mods = "CMD|CTRL",
@@ -58,7 +57,7 @@ conf.keys = {
 	},
 }
 
-conf.mouse_bindings = {
+config.mouse_bindings = {
 	-- Ctrl-click will open the link under the mouse cursor
 	{
 		event = { Up = { streak = 1, button = "Left" } },
@@ -67,4 +66,4 @@ conf.mouse_bindings = {
 	},
 }
 
-return conf
+return config
