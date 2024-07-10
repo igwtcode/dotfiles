@@ -4,16 +4,6 @@ return {
     event = { "BufReadPre", "BufNewFile" },
     main = "ibl",
     config = function()
-      local highlight = {
-        "RainbowRed",
-        "RainbowYellow",
-        "RainbowBlue",
-        "RainbowOrange",
-        "RainbowGreen",
-        "RainbowViolet",
-        "RainbowCyan",
-      }
-
       require("ibl").setup({
         indent = {
           char = { "|", "¦", "┆", "┊" },
@@ -54,7 +44,6 @@ return {
           char = "|",
           show_start = false,
           show_end = false,
-          highlight = highlight,
         },
       })
     end,
