@@ -25,10 +25,10 @@ conf.window_decorations = "RESIZE"
 conf.window_close_confirmation = "AlwaysPrompt"
 conf.window_frame = { font_size = 16 }
 conf.window_padding = {
-	left = 15,
-	bottom = 9,
-	top = 15,
-	right = 15,
+	left = 0,
+	bottom = 0,
+	top = 6,
+	right = 0,
 }
 
 conf.use_fancy_tab_bar = false
