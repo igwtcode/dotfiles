@@ -19,7 +19,7 @@ conf.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 -- conf.color_scheme = "Tokyo Night"
 
 conf.macos_window_background_blur = 30
-conf.native_macos_fullscreen_mode = false
+conf.native_macos_fullscreen_mode = true
 conf.window_background_opacity = 0.85
 conf.window_decorations = "RESIZE"
 conf.window_close_confirmation = "AlwaysPrompt"
@@ -42,7 +42,7 @@ conf.font = wezterm.font_with_fallback({
 	font_name,
 	{ family = font_name, italic = true },
 })
-conf.font_size = 16
+conf.font_size = 17
 conf.line_height = 1.1
 conf.dpi = 144
 conf.initial_cols = 90
