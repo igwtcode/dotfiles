@@ -95,8 +95,8 @@ vim.opt.sidescrolloff = 12
 -- don't give |ins-completion-menu| messages
 vim.opt.shortmess:append("c")
 
--- to see things like -- INSERT
-vim.opt.showmode = true
+-- not show things like -- INSERT
+vim.opt.showmode = false
 
 -- hide tabline on top (filename)
 vim.opt.showtabline = 0
