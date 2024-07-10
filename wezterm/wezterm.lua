@@ -35,7 +35,7 @@ conf.use_fancy_tab_bar = false
 conf.tab_bar_at_bottom = true
 conf.hide_tab_bar_if_only_one_tab = true
 
-conf.default_cursor_style = "BlinkingUnderline"
+conf.default_cursor_style = "SteadyBlock"
 conf.force_reverse_video_cursor = true
 
 conf.font = wezterm.font_with_fallback({
