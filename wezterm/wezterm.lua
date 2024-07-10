@@ -31,6 +31,7 @@ conf.window_padding = {
 	right = 0,
 }
 
+conf.adjust_window_size_when_changing_font_size = false
 conf.use_fancy_tab_bar = false
 conf.tab_bar_at_bottom = true
 conf.hide_tab_bar_if_only_one_tab = true
@@ -42,7 +43,7 @@ conf.font = wezterm.font_with_fallback({
 	font_name,
 	{ family = font_name, italic = true },
 })
-conf.font_size = 17
+conf.font_size = 18
 conf.line_height = 1.1
 conf.dpi = 144
 conf.initial_cols = 90
