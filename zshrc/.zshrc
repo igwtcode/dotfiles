@@ -42,9 +42,11 @@ export LG_CONFIG_FILE=$HOME/.config/lazygit/config.yaml
 export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 nvim_mason=$HOME/.local/share/nvim/mason/bin
+rancher_desktop=$HOME/.rd/bin
 export GOPATH=$HOME/go/bin
-export PATH=$GOPATH:$nvim_mason:$PATH
+export PATH=$GOPATH:$nvim_mason:$rancher_desktop:$PATH
 unset nvim_mason
+unset rancher_desktop
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
