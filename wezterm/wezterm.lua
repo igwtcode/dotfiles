@@ -1,7 +1,8 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 local config = {}
-local font_name = "CaskaydiaCove Nerd Font"
+local font_name = "JetBrainsMono Nerd Font"
+-- local font_name = "CaskaydiaCove Nerd Font"
 
 if wezterm.config_builder then
 	config = wezterm.config_builder()
@@ -38,12 +39,18 @@ config.hide_tab_bar_if_only_one_tab = true
 config.default_cursor_style = "SteadyBlock"
 config.force_reverse_video_cursor = true
 
+config.harfbuzz_features = { "calt=0", "clig=0", "liga=0" }
 config.font = wezterm.font_with_fallback({
 	font_name,
-	{ family = font_name, italic = true },
+	{
+		family = font_name,
+		weight = "Medium",
+		harfbuzz_features = { "calt=0", "clig=0", "liga=0" },
+		-- italic = true,
+	},
 })
 config.font_size = 18
-config.line_height = 1.1
+-- config.line_height = 1.1
 config.dpi = 144
 config.initial_cols = 90
 config.initial_rows = 30
