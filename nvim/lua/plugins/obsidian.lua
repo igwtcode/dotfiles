@@ -24,11 +24,11 @@ return {
         },
 
         disable_frontmatter = true,
-        notes_subdir = "0-inbox",
+        notes_subdir = "notes",
         new_notes_location = "notes_subdir",
 
         daily_notes = {
-          folder = "1-daily",
+          folder = "notes",
           date_format = "%Y-%m-%d-%a",
           template = "daily.md",
         },
@@ -40,7 +40,8 @@ return {
         },
 
         note_id_func = function(title)
-          return h.toLowerKebabCase(title)
+          return title
+          -- return h.toLowerKebabCase(title)
         end,
 
         follow_url_func = function(url)
