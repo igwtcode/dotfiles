@@ -159,10 +159,11 @@ vim.opt.wrap = false
 vim.opt.writebackup = false
 
 vim.opt.guicursor = {
-  "n-v-c:block", -- Normal, visual, command-line: block cursor
-  "i-ci-ve:ver25", -- Inset, command-line insert, visual-exclude: vertical bar cusor with 25% width
-  "r-cr:hor20", -- Rplace, command-line replace: horizontal bar cursor with 20% height
-  "o:hor50", -- Operato-pending: horizontal bar cursor with 50% height
+  "a:block", -- All modes
+  -- "n-v-c:block", -- Normal, visual, command-line: block cursor
+  -- "i-ci-ve:ver25", -- Inset, command-line insert, visual-exclude: vertical bar cusor with 25% width
+  -- "r-cr:hor20", -- Rplace, command-line replace: horizontal bar cursor with 20% height
+  -- "o:hor50", -- Operato-pending: horizontal bar cursor with 50% height
   -- "a:ver25-blinkon1",       -- All modes: blinking settings
   -- "sm:hor50-blinkon1",      -- Showmatch: block cursor with specific blinking settings
 }
