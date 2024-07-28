@@ -26,6 +26,7 @@ alias lg=lazygit
 alias c=clear
 alias v=nvim
 alias b=bat
+alias k=kubectl
 alias src='source $HOME/.zshrc'
 alias lt='eza --group-directories-first --ignore-glob ".git|.DS_Store" -laTL'
 alias ll='eza --group-directories-first --ignore-glob ".DS_Store" -l'
@@ -53,6 +54,7 @@ if [[ "$OSTYPE" == "darwin"* ]]; then
 elif [[ "$OSTYPE" == "linux-gnu"* ]]; then
   eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 fi
+
 eval "$(starship init zsh)"
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
@@ -88,3 +90,5 @@ git_pull_all_branches() {
 pull_tracking() {
   for x in $(ls -1 |grep -i '.modul.tracking'); do echo -e "\n---------\n==> $x\n" && cd $x && git_pull_all_branches && cd .. ; done
 }
+
+source <(kubectl completion zsh)
