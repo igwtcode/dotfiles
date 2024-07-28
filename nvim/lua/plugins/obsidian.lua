@@ -24,17 +24,17 @@ return {
         },
 
         disable_frontmatter = true,
-        notes_subdir = "notes",
+        notes_subdir = "inbox",
         new_notes_location = "notes_subdir",
 
         daily_notes = {
-          folder = "notes",
+          folder = "daily",
           date_format = "%Y-%m-%d-%a",
           template = "daily.md",
         },
 
         templates = {
-          folder = "templates",
+          folder = "template",
           date_format = "%Y-%m-%d-%a",
           time_format = "%H:%M",
         },
