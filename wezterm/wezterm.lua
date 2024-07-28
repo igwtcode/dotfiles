@@ -2,7 +2,8 @@ local wezterm = require("wezterm")
 local act = wezterm.action
 local config = {}
 -- local font_name = "Jetbrains Mono Nerd Font"
-local font_name = "CaskaydiaCove Nerd Font"
+-- local font_name = "CaskaydiaCove Nerd Font"
+local font_name = "UbuntuMono Nerd Font"
 
 if wezterm.config_builder then
 	config = wezterm.config_builder()
@@ -20,7 +21,7 @@ config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
 -- config.macos_window_background_blur = 30
 config.native_macos_fullscreen_mode = true
--- config.window_background_opacity = 0.85
+config.window_background_opacity = 0.85
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
 config.window_frame = { font_size = 16 }
