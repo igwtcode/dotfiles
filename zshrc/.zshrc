@@ -91,4 +91,6 @@ pull_tracking() {
   for x in $(ls -1 |grep -i '.modul.tracking'); do echo -e "\n---------\n==> $x\n" && cd $x && git_pull_all_branches && cd .. ; done
 }
 
-source <(kubectl completion zsh)
+if [[ "$OSTYPE" == "darwin"* ]]; then
+  source <(kubectl completion zsh)
+fi
