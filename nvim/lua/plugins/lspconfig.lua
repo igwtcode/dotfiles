@@ -26,6 +26,7 @@ return {
       local ensure_installed = {
         "actionlint",
         "ansiblels",
+        "ansible-lint",
         "autopep8",
         "bashls",
         "cfn-lint",
