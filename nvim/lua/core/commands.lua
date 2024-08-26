@@ -7,8 +7,8 @@ vim.filetype.add({
     [".*/playbooks/.*.yaml"] = "yaml.ansible",
     [".*/roles/.*.yaml"] = "yaml.ansible",
     ["playbook.yaml"] = "yaml.ansible",
-    [".github/.*.yaml"] = "yaml.github",
-    [".github/workflows/.*.yaml"] = "yaml.github",
+    -- [".*/.github/.*.yaml"] = "yaml.github",
+    -- [".*/.github/workflows/.*.yaml"] = "yaml.github",
   },
 })
 
