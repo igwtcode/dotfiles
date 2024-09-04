@@ -1,9 +1,9 @@
 local wezterm = require("wezterm")
 local act = wezterm.action
 local config = {}
-local font_name = "JetBrainsMonoNL Nerd Font"
+-- local font_name = "JetBrainsMonoNL Nerd Font"
 -- local font_name = "CaskaydiaCove Nerd Font"
--- local font_name = "UbuntuMono Nerd Font"
+local font_name = "UbuntuMono Nerd Font"
 
 if wezterm.config_builder then
 	config = wezterm.config_builder()
@@ -11,7 +11,8 @@ end
 
 local function scheme_for_appearance(appearance)
 	if appearance:find("Dark") then
-		return "Catppuccin Mocha"
+		return "Catppuccin Macchiato"
+		-- return "Catppuccin Mocha"
 	else
 		return "Catppuccin Latte"
 	end
@@ -44,8 +45,8 @@ config.font = wezterm.font_with_fallback({
 	font_name,
 	{ family = font_name, italic = true },
 })
-config.font_size = 16
-config.line_height = 1.03
+config.font_size = 20
+config.line_height = 1.2
 config.dpi = 144
 config.initial_cols = 90
 config.initial_rows = 30
