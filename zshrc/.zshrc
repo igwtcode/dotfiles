@@ -94,3 +94,8 @@ pull_tracking() {
 if [[ "$OSTYPE" == "darwin"* ]]; then
   source <(kubectl completion zsh)
 fi
+
+if command -v gh &> /dev/null; then
+  source <(gh completion -s zsh)
+fi
+
