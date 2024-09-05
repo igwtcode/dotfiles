@@ -67,7 +67,7 @@ return {
           enable = true,
         },
         indent = {
-          enable = true,
+          enable = false,
           disable = { "ocaml", "ocaml_interface" },
         },
         autopairs = {
