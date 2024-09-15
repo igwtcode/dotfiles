@@ -40,7 +40,7 @@ return {
         "pyright",
         "terraformls",
         "tflint",
-        "tsserver",
+        "ts_ls",
         "yamlls",
         "go-debug-adapter",
         "js-debug-adapter",
@@ -151,7 +151,7 @@ return {
         on_attach = on_attach,
       })
 
-      lspconfig.tsserver.setup({
+      lspconfig.ts_ls.setup({
         capabilities = capabilities,
         default_handlers = default_handlers,
         on_attach = on_attach,
