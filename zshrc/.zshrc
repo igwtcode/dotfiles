@@ -27,6 +27,7 @@ alias c=clear
 alias v=nvim
 alias b=bat
 alias k=kubectl
+alias tf=terraform
 alias src='source $HOME/.zshrc'
 alias lt='eza --group-directories-first --ignore-glob ".git|.DS_Store" -laTL'
 alias ll='eza --group-directories-first --ignore-glob ".DS_Store" -l'
@@ -44,10 +45,12 @@ export STARSHIP_CONFIG=$HOME/.config/starship/starship.toml
 
 nvim_mason=$HOME/.local/share/nvim/mason/bin
 rancher_desktop=$HOME/.rd/bin
-export GOPATH=$HOME/go/bin
-export PATH=$GOPATH:$nvim_mason:$rancher_desktop:$PATH
+export GOBINPATH=$HOME/go/bin/bin
+export PATH=$GOBINPATH:$nvim_mason:$rancher_desktop:$PATH
 unset nvim_mason
 unset rancher_desktop
+
+# export TF_PLUGIN_CACHE_DIR="$HOME/.terraform.d/plugin-cache"
 
 if [[ "$OSTYPE" == "darwin"* ]]; then
   eval "$(/opt/homebrew/bin/brew shellenv)"
