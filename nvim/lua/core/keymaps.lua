@@ -8,7 +8,7 @@ local h = require("utils.helpers")
 
 local M = {}
 
-h.nnoremap("<leader>e", "<cmd>Oil<CR>", { desc = "Explorer" })
+h.nnoremap("<leader>e", "<cmd>Oil --float<CR>", { desc = "Explorer" })
 h.nnoremap("<leader>w", "<cmd>w<cr>", { silent = false, desc = "Save/Write" })
 h.nnoremap("<leader>q", "<cmd>q<cr>", { silent = false, desc = "Quit" })
 h.nnoremap("<leader>r", "<cmd>RotateWindows<cr>", { desc = "Rotate Windows" })

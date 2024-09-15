@@ -6,10 +6,10 @@ return {
     dependencies = { "nvim-tree/nvim-web-devicons" },
     config = function()
       require("oil").setup({
-        -- float = {
-        --   max_height = 45,
-        --   max_width = 120,
-        -- },
+        float = {
+          max_height = 45,
+          max_width = 72,
+        },
         use_default_keymaps = false,
         keymaps = {
           ["g?"] = "actions.show_help",
