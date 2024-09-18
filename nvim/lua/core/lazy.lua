@@ -16,11 +16,17 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
   { import = "plugins" },
 }, {
+  concurrency = 18,
   checker = {
     enabled = true,
     notify = false,
+    concurrency = 27,
   },
   change_detection = {
     notify = false,
+  },
+  ui = {
+    border = "rounded",
+    backdrop = 89,
   },
 })
