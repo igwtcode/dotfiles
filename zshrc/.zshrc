@@ -19,8 +19,6 @@ alias bg=' bg'
 alias fg=' fg'
 alias lazygit=' lazygit'
 alias clear=' clear'
-alias nvim=' nvim'
-alias bat=' bat'
 alias hist=' history -E'
 alias lg=lazygit
 alias c=clear
@@ -61,7 +59,7 @@ fi
 eval "$(starship init zsh)"
 
 source $(brew --prefix)/share/zsh-autosuggestions/zsh-autosuggestions.zsh
-source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# source $(brew --prefix)/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source <(fzf --zsh)
 
 # Reevaluate the prompt string each time it's displaying a prompt
