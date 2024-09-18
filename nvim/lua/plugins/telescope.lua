@@ -17,6 +17,7 @@ return {
       },
       "olacin/telescope-cc.nvim",
       "folke/todo-comments.nvim",
+      "nvim-telescope/telescope-ui-select.nvim",
     },
     config = function()
       local telescope = require("telescope")
@@ -117,13 +118,32 @@ return {
             show_all_buffers = true,
           },
           lsp_code_actions = {
-            theme = "cursor",
+            theme = "dropdown",
           },
           lsp_references = {
-            theme = "cursor",
+            -- theme = "cursor",
+            theme = "dropdown",
+            layout_strategy = "horizontal",
+            layout_config = {
+              width = 0.9,
+              height = 0.8,
+              prompt_position = "top",
+              -- preview_cutoff = 120,
+              horizontal = {
+                preview_width = 0.66,
+              },
+              vertical = {
+                preview_height = 0.6,
+              },
+            },
           },
         },
         extensions = {
+          ["ui-select"] = {
+            require("telescope.themes").get_dropdown({
+              -- even more opts
+            }),
+          },
           fzf = {
             fuzzy = true, -- false will only do exact matching
             override_generic_sorter = true, -- override the generic sorter
@@ -137,6 +157,7 @@ return {
 
       telescope.load_extension("fzf")
       telescope.load_extension("conventional_commits")
+      telescope.load_extension("ui-select")
     end,
   },
 }
