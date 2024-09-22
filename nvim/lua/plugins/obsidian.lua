@@ -6,9 +6,15 @@ return {
     version = "*", -- recommended, use latest release instead of latest commit
     lazy = true,
     -- ft = "markdown",
-    -- event = {
-    --   "BufReadPre " .. vim.fn.expand("~") .. "/second-brain/**.md",
-    -- },
+    cmd = {
+      "ObsidianQuickSwitch",
+      "ObsidianToday",
+      "ObsidianNew",
+      "ObsidianOpen",
+    },
+    event = {
+      "BufReadPre " .. vim.fn.expand("~") .. "/second-brain/**.md",
+    },
     dependencies = {
       "nvim-lua/plenary.nvim",
     },
