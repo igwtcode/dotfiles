@@ -5,7 +5,7 @@ import = [
 [window]
 padding = { x = 12, y = 6 }
 decorations = "buttonless"
-opacity = 0.66
+opacity = 0.6
 blur = true
 startup_mode = "SimpleFullscreen"
 option_as_alt = "Both"
@@ -21,8 +21,8 @@ size = 17
 # builtin_box_drawing = false
 
 [cursor]
-# style = { shape = "Underline", blinking = "Always" }
-style = { shape = "Beam", blinking = "Always" }
+style = { shape = "Underline", blinking = "Always" }
+# style = { shape = "Beam", blinking = "Always" }
 
 [env]
 TERM = "xterm-256color"
