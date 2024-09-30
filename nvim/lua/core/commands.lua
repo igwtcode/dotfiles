@@ -214,8 +214,8 @@ end, {})
 --   })
 -- end
 
-vim.api.nvim_create_autocmd("ExitPre", {
-  group = vim.api.nvim_create_augroup("Exit", { clear = true }),
-  desc = "Reset cursor shape on exit",
-  command = "set guicursor=a:block",
-})
+-- vim.api.nvim_create_autocmd("ExitPre", {
+--   group = vim.api.nvim_create_augroup("Exit", { clear = true }),
+--   desc = "Reset cursor shape on exit",
+--   command = "set guicursor=a:block",
+-- })
