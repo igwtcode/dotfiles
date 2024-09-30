@@ -11,14 +11,10 @@ $python\
 $docker_context\
 $git_status\
 $cmd_duration\
-$line_break\
 $character"""
 
 palette = "catppuccin_mocha"
 add_newline = false
-
-[line_break]
-disabled = false
 
 [os]
 disabled = false
