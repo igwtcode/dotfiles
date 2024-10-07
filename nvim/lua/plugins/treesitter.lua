@@ -18,6 +18,7 @@ return {
           "c",
           "cmake",
           "comment",
+          "templ",
           "css",
           "csv",
           "diff",

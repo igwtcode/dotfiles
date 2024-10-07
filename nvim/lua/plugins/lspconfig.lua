@@ -24,6 +24,11 @@ return {
     },
     config = function()
       local ensure_installed = {
+        "html",
+        "htmx",
+        "tailwindcss",
+        "templ",
+        "taplo",
         "actionlint",
         "ansiblels",
         "ansible-lint",
@@ -32,6 +37,7 @@ return {
         "cfn-lint",
         "delve",
         "dockerls",
+        "docker_compose_language_service",
         "hadolint",
         "gopls",
         "jsonls",
@@ -146,6 +152,36 @@ return {
       })
 
       lspconfig.pyright.setup({
+        capabilities = capabilities,
+        default_handlers = default_handlers,
+        on_attach = on_attach,
+      })
+      lspconfig.html.setup({
+        capabilities = capabilities,
+        default_handlers = default_handlers,
+        on_attach = on_attach,
+      })
+      lspconfig.templ.setup({
+        capabilities = capabilities,
+        default_handlers = default_handlers,
+        on_attach = on_attach,
+      })
+      lspconfig.htmx.setup({
+        capabilities = capabilities,
+        default_handlers = default_handlers,
+        on_attach = on_attach,
+      })
+      lspconfig.tailwindcss.setup({
+        capabilities = capabilities,
+        default_handlers = default_handlers,
+        on_attach = on_attach,
+      })
+      lspconfig.taplo.setup({
+        capabilities = capabilities,
+        default_handlers = default_handlers,
+        on_attach = on_attach,
+      })
+      lspconfig.docker_compose_language_service.setup({
         capabilities = capabilities,
         default_handlers = default_handlers,
         on_attach = on_attach,
