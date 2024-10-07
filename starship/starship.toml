@@ -49,12 +49,12 @@ symbol = "󱁢"
 format = "[$symbol $workspace ](fg:purple)"
 
 [docker_context]
-symbol = ""
+symbol = " "
 format = "[$symbol ](fg:sky)"
 
 [cmd_duration]
 min_time = 300
-format="[$duration ](fg:flamingo)"
+format = "[$duration ](fg:flamingo)"
 show_milliseconds = false
 
 [character]
