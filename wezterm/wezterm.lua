@@ -23,7 +23,7 @@ end
 config.color_scheme = scheme_for_appearance(wezterm.gui.get_appearance())
 
 config.macos_window_background_blur = 33
-config.native_macos_fullscreen_mode = false
+config.native_macos_fullscreen_mode = true
 config.window_background_opacity = 0.77
 config.window_decorations = "RESIZE"
 config.window_close_confirmation = "AlwaysPrompt"
