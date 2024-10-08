@@ -12,6 +12,13 @@ vim.filetype.add({
   },
 })
 
+vim.api.nvim_create_autocmd("FileType", {
+  pattern = "http",
+  callback = function()
+    vim.api.nvim_buf_set_keymap(0, "n", "<leader>r", "<cmd>Rest run<CR>", { noremap = true, silent = true })
+  end,
+})
+
 vim.api.nvim_create_autocmd("LspAttach", {
   pattern = { "*.yaml", "*.yml" },
   callback = h.set_aws_cloudformation_schemas,
