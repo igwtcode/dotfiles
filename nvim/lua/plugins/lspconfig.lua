@@ -25,6 +25,7 @@ return {
     config = function()
       local ensure_installed = {
         "html",
+        "volar",
         "htmx",
         "tailwindcss",
         "templ",
@@ -187,6 +188,9 @@ return {
         on_attach = on_attach,
       })
 
+      local mason_registry = require("mason-registry")
+      local vue_language_server_path = mason_registry.get_package("vue-language-server"):get_install_path()
+        .. "/node_modules/@vue/language-server"
       lspconfig.ts_ls.setup({
         capabilities = capabilities,
         default_handlers = default_handlers,
@@ -219,12 +223,39 @@ return {
             desc = "Remove Unused Imports",
           },
         },
+        init_options = {
+          plugins = {
+            {
+              name = "@vue/typescript-plugin",
+              location = vue_language_server_path,
+              languages = { "javascript", "typescript", "vue" },
+            },
+          },
+        },
         ---@diagnostic disable-next-line: missing-fields
+        filetypes = {
+          "javascript",
+          "typescript",
+          "vue",
+        },
         settings = {
+          -- codeActionsOnSave = {
+          --   ["source.organizeImports"] = true,
+          --   ["source.organizeImports.ts"] = true,
+          --   ["source.removeUnused.ts"] = true,
+          --   ["source.addMissingImports.ts"] = true,
+          --   ["source.removeUnusedImports.ts"] = true,
+          --   ["source.sortImports.ts"] = true,
+          -- },
           completions = {
             completeFunctionCalls = true,
           },
         },
+      })
+      lspconfig.volar.setup({
+        capabilities = capabilities,
+        default_handlers = default_handlers,
+        on_attach = on_attach,
       })
 
       lspconfig.gopls.setup({
