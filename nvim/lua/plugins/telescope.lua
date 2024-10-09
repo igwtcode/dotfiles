@@ -32,7 +32,7 @@ return {
         local lines = vim.split(messages, "\n")
 
         pickers
-          .new({}, {
+          .new({ initial_mode = "normal" }, {
             prompt_title = "Messages",
             finder = finders.new_table({
               results = lines,
@@ -53,13 +53,12 @@ return {
       })
 
       telescope.setup({
-        defaults = {
-          layout_strategy = "horizontal",
-          -- layout_config = { prompt_position = "top" },
-          -- sorting_strategy = "ascending",
-          winblend = 0,
+        defaults = vim.tbl_extend("force", require("telescope.themes").get_ivy(), {
+          layout_config = {
+            height = 0.66,
+          },
           preview = {
-            filesize_limit = 1, -- MB
+            filesize_limit = 3, -- MB
           },
           vimgrep_arguments = {
             "rg",
@@ -83,6 +82,9 @@ return {
           },
           -- path_display = { "smart" },
           mappings = {
+            n = {
+              ["dd"] = actions.delete_buffer,
+            },
             i = {
               ["<C-k>"] = actions.move_selection_previous, -- move to prev result
               ["<C-j>"] = actions.move_selection_next, -- move to next result
@@ -90,7 +92,7 @@ return {
               ["<C-t>"] = trouble_telescope.open,
             },
           },
-        },
+        }),
         pickers = {
           find_files = {
             hidden = true,
@@ -116,26 +118,7 @@ return {
             sort_lastused = true,
             ignore_current_buffer = false,
             show_all_buffers = true,
-          },
-          lsp_code_actions = {
-            theme = "dropdown",
-          },
-          lsp_references = {
-            -- theme = "cursor",
-            theme = "dropdown",
-            layout_strategy = "horizontal",
-            layout_config = {
-              width = 0.9,
-              height = 0.8,
-              prompt_position = "top",
-              -- preview_cutoff = 120,
-              horizontal = {
-                preview_width = 0.66,
-              },
-              vertical = {
-                preview_height = 0.6,
-              },
-            },
+            sort_mru = true,
           },
         },
         extensions = {
