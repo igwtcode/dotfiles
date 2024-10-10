@@ -162,11 +162,6 @@ return {
         default_handlers = default_handlers,
         on_attach = on_attach,
       })
-      lspconfig.emmet_ls.setup({
-        capabilities = capabilities,
-        default_handlers = default_handlers,
-        on_attach = on_attach,
-      })
       lspconfig.tailwindcss.setup({
         capabilities = capabilities,
         default_handlers = default_handlers,
