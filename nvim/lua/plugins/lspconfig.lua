@@ -93,7 +93,7 @@ return {
 
       local lspconfig = require("lspconfig")
       -- lspconfig.ui.windows.default_options.border = "rounded"
-      require("lspconfig.ui.windows").default_options.border = "rounded"
+      -- require("lspconfig.ui.windows").default_options.border = "rounded"
 
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend("force", capabilities, require("cmp_nvim_lsp").default_capabilities())
@@ -223,24 +223,20 @@ return {
           },
         },
         ---@diagnostic disable-next-line: missing-fields
-        filetypes = {
-          "javascript",
-          "typescript",
-          "vue",
-        },
-        settings = {
-          -- codeActionsOnSave = {
-          --   ["source.organizeImports"] = true,
-          --   ["source.organizeImports.ts"] = true,
-          --   ["source.removeUnused.ts"] = true,
-          --   ["source.addMissingImports.ts"] = true,
-          --   ["source.removeUnusedImports.ts"] = true,
-          --   ["source.sortImports.ts"] = true,
-          -- },
-          completions = {
-            completeFunctionCalls = true,
-          },
-        },
+        filetypes = { "javascript", "typescript", "vue" },
+        -- settings = {
+        --   -- codeActionsOnSave = {
+        --   --   ["source.organizeImports"] = true,
+        --   --   ["source.organizeImports.ts"] = true,
+        --   --   ["source.removeUnused.ts"] = true,
+        --   --   ["source.addMissingImports.ts"] = true,
+        --   --   ["source.removeUnusedImports.ts"] = true,
+        --   --   ["source.sortImports.ts"] = true,
+        --   -- },
+        --   completions = {
+        --     completeFunctionCalls = true,
+        --   },
+        -- },
       })
       lspconfig.volar.setup({
         capabilities = capabilities,

@@ -22,7 +22,8 @@ return {
           timeout_ms = 1000,
         },
         formatters = {
-          prettier = {
+          custom_prettier = {
+            command = "prettier",
             stdin = true,
             args = {
               "--stdin-filepath",
@@ -55,15 +56,16 @@ return {
           ["terraform-vars"] = { "terraform_fmt" },
           sh = { "shfmt" },
           lua = { "stylua" },
-          yaml = { "prettier" },
-          ["yaml.cfn"] = { "prettier" },
-          ["yaml.sam"] = { "prettier" },
-          json = { "prettier" },
-          jsonc = { "prettier" },
+          yaml = { "custom_prettier" },
+          ["yaml.cfn"] = { "custom_prettier" },
+          ["yaml.sam"] = { "custom_prettier" },
+          json = { "custom_prettier" },
+          jsonc = { "custom_prettier" },
           markdown = { "prettier" },
           ["markdown.mdx"] = { "prettier" },
           javascript = { "prettier" },
           typescript = { "prettier" },
+          vue = { "prettier" },
           handlebars = { "prettier" },
           html = { "prettier" },
           css = { "prettier" },
