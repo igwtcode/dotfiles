@@ -1,13 +1,11 @@
-import = [
-  "~/.config/alacritty/catppuccin-mocha.toml"
-]
+general.import = ["~/.config/alacritty/catppuccin-mocha.toml"]
 
 [window]
 padding = { x = 12, y = 6 }
-decorations = "buttonless"
-opacity = 0.6
-blur = true
-startup_mode = "SimpleFullscreen"
+# decorations = "buttonless"
+# opacity = 0.6
+# blur = true
+# startup_mode = "SimpleFullscreen"
 option_as_alt = "Both"
 
 [font]
